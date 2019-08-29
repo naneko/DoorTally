@@ -1,0 +1,24 @@
+.control {
+  font-size: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+
+  .up {
+    color: #b5ff9e;
+    font-size: inherit;
+  }
+
+  .down {
+    color: #ffaca3;
+    font-size:inherit;
+  }
+
+  .counter {
+    font-size: 50px;
+    color: #fff;
+  }
+}
