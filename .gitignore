@@ -1,1 +1,3 @@
 .env
+/static/.sass-cache/*
+/__pycache__/

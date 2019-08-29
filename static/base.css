@@ -441,7 +441,12 @@ template {
     text-align: center;
     border-radius: 5px;
     color: #fff;
-    font-size: 24px; }
+    font-size: 24px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
 
 .control {
   font-size: 300px;
@@ -453,13 +458,28 @@ template {
   align-items: center; }
   .control .up {
     color: #b5ff9e;
-    font-size: inherit; }
+    font-size: inherit;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
   .control .down {
     color: #ffaca3;
-    font-size: inherit; }
+    font-size: inherit;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
   .control .counter {
     font-size: 50px;
-    color: #fff; }
+    color: #fff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
 
 body {
   background: #333;
