@@ -1,0 +1,29 @@
+<div class="instances">
+{% for instance in instances %}
+    <form>
+        <h1>{{ instance.id }}</h1>
+        {% if instance.admin == True %}
+            <label for="name">Name</label>
+            <input disabled class="instance-input" type="text" name="name" data-instance="{{ instance.id }}" value="{{ instance.name }}">
+            <label for="pin">Pin</label>
+            <input class="instance-input" type="text" name="pin" data-instance="{{ instance.id }}" title="Numerical Pin Number" required pattern="([0-9])+" value="{{ instance.pin }}">
+        {% else %}
+            <label for="name">Name</label>
+            <input class="instance-input" type="text" name="name" data-instance="{{ instance.id }}" value="{{ instance.name }}">
+            <label for="pin">Pin</label>
+            <input class="instance-input" type="text" name="pin" data-instance="{{ instance.id }}" title="Numerical Pin Number" required pattern="([0-9])+" value="{{ instance.pin }}">
+            <label for="value">Current Visitor Count</label>
+            <input class="instance-input" type="number" name="value" data-instance="{{ instance.id }}" min="0" value="{{ instance.value }}">
+            <label for="max_value">Capacity</label>
+            <input class="instance-input" type="number" name="max_value" data-instance="{{ instance.id }}" min="0" value="{{ instance.max_value }}">
+            <label for="buffer">Capacity warning</label>
+            <input class="instance-input" type="number" name="buffer" data-instance="{{ instance.id }}" min="0" value="{{ instance.buffer }}">
+        {% endif %}
+    </form>
+{% endfor %}
+</div>
+<div class="admin-notify">Saved</div>
+<div class="admin-buttons">
+    <div class="button" id="logout">Close Admin</div>
+    <div class="button" id="adduser">New Instance</div>
+</div>

@@ -105,6 +105,10 @@ function loginOperator() {
                         if(debug) console.info("Login ok");
                         loadApp();
                         break;
+                    case "ok_admin":
+                        if(debug) console.info("Login admin ok");
+                        loadAdmin();
+                        break;
                     case "auth_error":
                         if(debug) console.warn("Login auth error");
                         alert("Incorrect pin");
@@ -137,9 +141,35 @@ function loadApp() {
 
 function appOperator() {
     // TODO: Add 1s timeout function to detect disconnect
+    socket.on('reload', () => {
+        console.log("Refresh triggered by server");
+        location.reload();
+    });
+
     socket.on('counter', (data) => {
         $(".counter").text(data).stop().fadeTo(0, 0.3, function() { $(this).fadeTo(500, 1.0); });
     });
+
+    socket.on('notification', (level, message) => {
+        if(debug) console.log("Notification received | " + level + " | " + message);
+        let notificationBox = $('#notification');
+        let notification = (cssClass, message) => {return '<div class="notification ' + cssClass + '">' + message + '</div>'};
+        switch(level) {
+            case 1:
+                notificationBox.html(notification('info', message));
+                break;
+            case 2:
+                notificationBox.html(notification('warn', message));
+                break;
+            case 3:
+                notificationBox.html(notification('alert', message));
+                break;
+            default:
+                notificationBox.empty();
+                break;
+        }
+    });
+
     action("counter", "get");
     $(".up").on(interaction, function() {
         $(this).stop().fadeTo(0, 0.3, function() { $(this).fadeTo(500, 1.0); });
@@ -148,6 +178,43 @@ function appOperator() {
     $(".down").on(interaction, function() {
         $(this).stop().fadeTo(0, 0.3, function() { $(this).fadeTo(500, 1.0); });
         action("counter", "subtract");
+    });
+}
+
+/*
+    Loads the admin element
+ */
+function loadAdmin() {
+    if(debug) console.log("Loading admin...");
+    loadElement("admin", adminOperator);
+}
+
+function adminOperator() {
+    $(".instance-input").on("input",function() {
+        let instance = $(this).attr("data-instance");
+        let field = $(this).attr("name");
+        let value = $(this).val();
+        $(".admin-notify").removeClass("error").addClass("saving").text("Saving");
+        action('admin', {instance: instance, field: field, value: value}, function(response) {
+            if(response === "ok"){
+                $(".admin-notify").removeClass("saving").text("Saved");
+            }
+            else {
+                $(".admin-notify").removeClass("saving").addClass("error").text("Check Values");
+            }
+        });
+    });
+    $("#logout").on(interaction, function() {
+        $(".admin-notify").addClass("saving").text("Logging out...");
+        $(this).stop().fadeTo(0, 0.3, function() { $(this).fadeTo(500, 1.0); });
+        action("logout");
+        loadLogin();
+    });
+    $("#adduser").on(interaction, function() {
+        $(".admin-notify").addClass("saving").text("Adding user...");
+        $(this).stop().fadeTo(0, 0.3, function() { $(this).fadeTo(500, 1.0); });
+        action("adduser");
+        loadAdmin();
     });
 }
 
@@ -200,6 +267,9 @@ $(function() {
             break;
         case "#debug-app":
             loadApp();
+            break;
+        case "#debug-admin":
+            loadAdmin();
             break;
         default:
             debug = false;

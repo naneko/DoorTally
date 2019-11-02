@@ -1,0 +1,47 @@
+.instances {
+  color: #fff;
+  label {
+    display: inline-block;
+  }
+  input {
+    display:block;
+  }
+}
+.admin-notify {
+  position: fixed;
+  top:0;
+  right:0;
+  background: lightgreen;
+  color: #fff;
+
+  &.saving {
+    background: darkorange;
+    font-weight: bold;
+  }
+
+  &.error {
+    background: red;
+    font-weight: bold;
+  }
+}
+.admin-buttons {
+  position: fixed;
+  bottom:0;
+  right:0;
+  width: 100px;
+  .button {
+    padding: 16px;
+    background: #ff5555;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 24px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+}
