@@ -1,32 +1,27 @@
 import functools
 import os
 import random
-import threading
 from datetime import timedelta
 
-from dotenv import load_dotenv
-from flask import Flask, render_template, request, make_response, session, redirect, url_for
-from flask_dotenv import DotEnv
+from flask import Flask, render_template, session, redirect, url_for
 from flask_login import LoginManager, current_user, login_user, logout_user
 from flask_migrate import Migrate
-from flask_seasurf import SeaSurf
 from flask_socketio import SocketIO, disconnect
 from flask_sqlalchemy import SQLAlchemy
 
 APP_ROOT = os.path.join(os.path.dirname(__file__), '..')   # refers to application_top
-# dotenv_path = os.path.join(APP_ROOT, '.env')
-# load_dotenv(dotenv_path)
 
 app = Flask(__name__)
-env = DotEnv(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 socketio = SocketIO(app)
-csrf = SeaSurf(app)
 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config.from_envvar('SQLALCHEMY_DATABASE_URI')
+app.config.from_envvar('SECRET_KEY')
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 
 
