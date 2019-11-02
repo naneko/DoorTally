@@ -13,16 +13,16 @@ APP_ROOT = os.path.join(os.path.dirname(__file__), '..')   # refers to applicati
 
 app = Flask(__name__)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 socketio = SocketIO(app)
-
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config.from_envvar('SQLALCHEMY_DATABASE_URI')
-app.config.from_envvar('SECRET_KEY')
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 
 
 # TODO: Add admin flag
