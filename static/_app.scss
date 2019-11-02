@@ -39,3 +39,27 @@
     user-select: none;
   }
 }
+#notification {
+    .notification {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      background-color: #fff;
+
+      &.info {}
+
+      &.warn {
+        background-color: #fc8;
+      }
+
+      &.alert {
+        background-color: #f55;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+}

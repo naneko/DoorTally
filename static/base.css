@@ -447,7 +447,8 @@ template {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    touch-action: manipulation; }
+    touch-action: manipulation;
+    cursor: pointer; }
 
 .control {
   font-size: 300px;
@@ -483,6 +484,62 @@ template {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; }
+
+#notification .notification {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  background-color: #fff; }
+  #notification .notification.warn {
+    background-color: #fc8; }
+  #notification .notification.alert {
+    background-color: #f55;
+    color: #fff;
+    font-weight: bold; }
+
+.instances {
+  color: #fff; }
+  .instances label {
+    display: inline-block; }
+  .instances input {
+    display: block; }
+
+.admin-notify {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: lightgreen;
+  color: #fff; }
+  .admin-notify.saving {
+    background: darkorange;
+    font-weight: bold; }
+  .admin-notify.error {
+    background: red;
+    font-weight: bold; }
+
+.admin-buttons {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100px; }
+  .admin-buttons .button {
+    padding: 16px;
+    background: #ff5555;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 24px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer; }
 
 body {
   background: #333;
