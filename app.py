@@ -167,7 +167,7 @@ def api_action_counter(data):
     if data == "subtract" and counter.value > 0:
         counter.value -= 1
 
-    logger = Logger(time=datetime.datetime.now(datetime.timezone.utc), value=counter.value)
+    logger = Logger(time=datetime.datetime.now(datetime.timezone.utc), value=counter.value, instance=current_user)
 
     db.session.add(counter)
     db.session.add(logger)
