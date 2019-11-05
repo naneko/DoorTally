@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="237" column="47" selection-start-line="237" selection-start-column="47" selection-end-line="237" selection-end-column="47" />
+            <state relative-caret-position="121">
+              <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -198,7 +198,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="151" />
+    <option name="x" value="891" />
     <option name="y" value="22" />
     <option name="width" value="1037" />
     <option name="height" value="1053" />
@@ -367,7 +367,7 @@
       <workItem from="1572564202283" duration="13442000" />
       <workItem from="1572638704754" duration="25000" />
       <workItem from="1572719905242" duration="7424000" />
-      <workItem from="1572976852263" duration="303000" />
+      <workItem from="1572976852263" duration="1010000" />
     </task>
     <task id="LOCAL-00001" summary="Production ready&#10;(probably)">
       <created>1572723464978</created>
@@ -425,11 +425,25 @@
       <option name="project" value="LOCAL" />
       <updated>1572727450294</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed type casting&#10;(maybe)">
+      <created>1572977212897</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572977212897</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed database issue&#10;(maybe)">
+      <created>1572977734927</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572977734927</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23934000" />
+    <option name="totallyTimeSpent" value="24641000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,7 +455,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="151" y="22" width="1037" height="1053" extended-state="0" />
+    <frame x="891" y="22" width="1037" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34170854" />
@@ -481,7 +495,9 @@
     <MESSAGE value="Fixed deploy config" />
     <MESSAGE value="Fixed environment variable name" />
     <MESSAGE value="Updated requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated requirements.txt" />
+    <MESSAGE value="Fixed type casting&#10;(maybe)" />
+    <MESSAGE value="Fixed database issue&#10;(maybe)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed database issue&#10;(maybe)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/doortally$audience_counter.coverage" NAME="audience-counter Coverage Results" MODIFIED="1566272993483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -675,8 +691,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="237" column="47" selection-start-line="237" selection-start-column="47" selection-end-line="237" selection-end-column="47" />
+        <state relative-caret-position="121">
+          <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>

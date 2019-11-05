@@ -221,17 +221,14 @@ def api_action_logout(data):
 
 
 def api_action_adduser(data):
-    print("===API_ACTION_ADDUSER===")
 
     def create_unique_name():
-        print("===API_ACTION_ADDUSER: CREATE_UNIQUE_NAME===")
         name = 'New Instance ' + str(random.randint(0, 50))
         if Instance.query.filter_by(name=name).first() is not None:
             return create_unique_name()
         return name
 
     def create_unique_pin():
-        print("===API_ACTION_ADDUSER: CREATE_UNIQUE_PIN===")
         pin = random.randint(1111, 9999)
         if Instance.query.filter_by(pin=pin).first() is not None:
             return create_unique_pin()
@@ -239,8 +236,7 @@ def api_action_adduser(data):
 
     name = create_unique_name()
     pin = create_unique_pin()
-    instance = Instance(name=name, pin=pin, admin=False, value=0, max_value=0, buffer=0)
-    print("===API_ACTION_ADDUSER: Instance Created===")
+    instance = Instance(name=name, pin=str(pin), admin=False, value=0, max_value=0, buffer=0)
     db.session.add(instance)
     db.session.commit()
     return "ok"
