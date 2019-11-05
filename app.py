@@ -55,7 +55,7 @@ class Instance(db.Model):
 class Logger(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     instance_id = db.Column(db.Integer, db.ForeignKey('instance.id'))
-    instance = db.relationship('Instancce', backref=db.backref('logger', lazy=True))
+    instance = db.relationship('Instance', backref=db.backref('logger', lazy=True))
     time = db.Column(db.DateTime)  # In UTC
     value = db.Column(db.Integer)
 
