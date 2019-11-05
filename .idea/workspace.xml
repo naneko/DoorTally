@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49de9ea0-a31e-471b-9999-fd7a0d144a75" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="237" column="29" selection-start-line="237" selection-start-column="29" selection-end-line="237" selection-end-column="29" />
+            <state relative-caret-position="332">
+              <caret line="170" column="4" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -367,7 +366,7 @@
       <workItem from="1572564202283" duration="13442000" />
       <workItem from="1572638704754" duration="25000" />
       <workItem from="1572719905242" duration="7424000" />
-      <workItem from="1572976852263" duration="1659000" />
+      <workItem from="1572976852263" duration="2872000" />
     </task>
     <task id="LOCAL-00001" summary="Production ready&#10;(probably)">
       <created>1572723464978</created>
@@ -453,11 +452,18 @@
       <option name="project" value="LOCAL" />
       <updated>1572978281166</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed database issue">
+      <created>1572978653323</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572978653323</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25290000" />
+    <option name="totallyTimeSpent" value="26503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -472,7 +478,7 @@
     <frame x="891" y="22" width="1037" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34170854" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34170854" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -486,7 +492,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3298647" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3298647" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3298647" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3298647" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3298647" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.3298647" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.3298647" />
@@ -704,10 +710,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/lib/python3.7/datetime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="1626" column="31" selection-start-line="1626" selection-start-column="31" selection-end-line="1626" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="237" column="29" selection-start-line="237" selection-start-column="29" selection-end-line="237" selection-end-column="29" />
+        <state relative-caret-position="332">
+          <caret line="170" column="4" selection-start-line="170" selection-start-column="4" selection-end-line="170" selection-end-column="4" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>

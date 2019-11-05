@@ -1,7 +1,7 @@
 import functools
 import os
 import random
-from datetime import timedelta
+import datetime
 
 from flask import Flask, render_template, session, redirect, url_for
 from flask_login import LoginManager, current_user, login_user, logout_user
@@ -16,7 +16,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
+app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(hours=1)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -50,6 +50,13 @@ class Instance(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.name
+
+
+class Logger(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+    time = db.Column(db.DateTime)  # In UTC
+    value = db.Column(db.Integer)
 
 
 @login_manager.user_loader
@@ -158,7 +165,11 @@ def api_action_counter(data):
         counter.value += 1
     if data == "subtract" and counter.value > 0:
         counter.value -= 1
+
+    logger = Logger(name=counter.name, time=datetime.datetime.now(datetime.timezone.utc), value=counter.value)
+
     db.session.add(counter)
+    db.session.add(logger)
     db.session.commit()
     socketio.emit('counter', counter.value, broadcast=True)
 
@@ -178,7 +189,6 @@ def api_action_counter(data):
 
 @authenticated_only
 def api_action_admin(data):
-    print("===API_ACTION_ADMIN===")
     if current_user.admin:
         instance = Instance.query.filter_by(id=data['instance']).first()
         x = data['field']
