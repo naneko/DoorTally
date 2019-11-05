@@ -232,11 +232,13 @@ def api_action_adduser(data):
         pin = random.randint(1111, 9999)
         if Instance.query.filter_by(pin=pin).first() is not None:
             return create_unique_pin()
-        return pin
+        return str(pin)
 
     name = create_unique_name()
     pin = create_unique_pin()
-    instance = Instance(name=name, pin=str(pin), admin=False, value=0, max_value=0, buffer=0)
+    print("===PIN===")
+    print(pin)
+    instance = Instance(name=name, pin=pin, admin=False, value=0, max_value=0, buffer=0)
     db.session.add(instance)
     db.session.commit()
     return "ok"
