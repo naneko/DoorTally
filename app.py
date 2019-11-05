@@ -235,7 +235,7 @@ def api_action_adduser(data):
 
     name = create_unique_name()
     pin = create_unique_pin()
-    instance = Instance(name=name, pin=pin, admin=False, value=0, max_value=0, buffer=0)
+    instance = Instance(name=name, pin=int(pin), admin=False, value=0, max_value=0, buffer=0)
     db.session.add(instance)
     db.session.commit()
     return "ok"
